@@ -11,7 +11,7 @@
 # -----------
 # -- zplug --
 # -----------
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=~/.zplug
 export EMOJI_CLI_KEYBIND="^e"
 source $ZPLUG_HOME/init.zsh
 
