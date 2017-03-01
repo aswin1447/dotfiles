@@ -27,7 +27,7 @@ function x11 {
 # displays the hostname if not nirumbp
 function remote_host {
   if [ $(hostname) != nirumbp ]; then
-    echo "$(x11) $(hostname) "
+    echo "$(x11)  $(hostname) "
   fi
 }
 
