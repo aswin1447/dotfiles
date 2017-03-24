@@ -189,7 +189,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias mount_db="sshfs nirum@sni-vcs-baccus.stanford.edu:/share/baccus ~/sni"
 
     # set up LD_LIBRARY_PATH (cuda and Intel MKL libraries)
-    export LD_LIBRARY_PATH="/usr/local/cuda-8.0/lib64"
+    export LD_LIBRARY_PATH="/usr/local/cuda-8.0:/usr/local/cuda-8.0/lib64"
 
     # set up path
     export PATH="/usr/local/cuda-8.0/bin:$PATH"
