@@ -106,7 +106,6 @@ alias tma='tmux attach -d -t'
 alias tmn='tmux new -s'
 
 # git
-alias git='hub'
 alias gc='git clone'
 alias gcm='git commit -m'
 alias gs='git st'
@@ -195,10 +194,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     alias mount_db="sshfs nirum@sni-vcs-baccus.stanford.edu:/share/baccus ~/sni"
 
     # set up LD_LIBRARY_PATH (cuda and Intel MKL libraries)
-    export LD_LIBRARY_PATH="/usr/local/cuda-8.0:/usr/local/cuda-8.0/lib64"
+    export LD_LIBRARY_PATH="/usr/local/cuda:/usr/local/cuda/lib64"
 
     # set up path
-    export PATH="/usr/local/cuda-8.0/bin:$PATH"
+    export PATH="/usr/local/cuda/bin:$PATH"
     # export PATH="/opt/intel/bin:$PATH"
 
     # npm
