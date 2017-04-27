@@ -34,8 +34,8 @@ Plug 'brooth/far.vim'
 Plug 'AndrewRadev/multichange.vim'
 
 " tags
-Plug 'fntlnz/atags.vim'
-Plug 'majutsushi/tagbar'
+" Plug 'fntlnz/atags.vim'
+" Plug 'majutsushi/tagbar'
 
 " autocompletion
 Plug 'roxma/nvim-completion-manager'
@@ -198,7 +198,7 @@ map g# <Plug>(incsearch-nohl-g#)
 
 " tags (atags/tagbar)
 " autocmd! BufWritePost * call atags#generate()
-nnoremap <leader>g :call atags#generate()<cr>
+" nnoremap <leader>g :call atags#generate()<cr>
 
 " autocompletion (nvim-completion-manager) and ultisnips
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
