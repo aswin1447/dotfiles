@@ -106,7 +106,6 @@ alias tma='tmux attach -d -t'
 alias tmn='tmux new -s'
 
 # git
-alias gc='git clone'
 alias gcm='git commit -m'
 alias gs='git st'
 alias sg='git st'
