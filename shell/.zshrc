@@ -18,6 +18,9 @@ source $ZPLUG_HOME/init.zsh       # 60 ms
 # run `ls` and `git status` on cd
 zplug "nirum/smart-cd"          # 10 ms
 
+# oh-m-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
+
 # prezto (60 ms)
 zplug "modules/completion", from:prezto
 zplug "modules/history", from:prezto
@@ -126,8 +129,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # key bindings
-bindkey '^[[A' history-beginning-search-backward
-bindkey '^[[B' history-beginning-search-forward
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
 bindkey -v
 bindkey '^k' up-history
 bindkey '^j' down-history
