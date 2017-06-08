@@ -186,6 +186,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     alias duf='du -shc * | sort -h'
     alias pi='sudo -H pip3.5 install -U'
+    alias restart='sudo shutdown -r now'
     alias print='lpr'
 
     # temperature
