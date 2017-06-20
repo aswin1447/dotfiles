@@ -12,27 +12,18 @@
 # -- zplug --
 # -----------
 export ZPLUG_HOME=~/.zplug
-export EMOJI_CLI_KEYBIND="^e"
-source $ZPLUG_HOME/init.zsh       # 60 ms
+source $ZPLUG_HOME/init.zsh
 
-# run `ls` and `git status` on cd
-zplug "nirum/smart-cd"          # 10 ms
-
-# oh-m-zsh
-zplug "plugins/vi-mode", from:oh-my-zsh
-
-# prezto (60 ms)
-zplug "modules/completion", from:prezto
+# prezto
 zplug "modules/history", from:prezto
 zplug "modules/git", from:prezto
-zplug "modules/homebrew", from:prezto
 
-# zsh-users (30 ms)
+# zsh-users
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
 
 # source plugins and add commands to $PATH
-zplug load        # (300 ms)
+zplug load
 
 
 # -----------------
@@ -58,7 +49,7 @@ export CLICOLOR=1
 export LC_CTYPE=en_US.UTF-8
 
 # custom prompt
-source $HOME/.zsh/prompt.zsh  # slow (50 ms)
+source $HOME/.zsh/prompt.zsh
 
 
 # -------------
@@ -69,7 +60,7 @@ source $HOME/.zsh/prompt.zsh  # slow (50 ms)
 export EDITOR="nvim"
 
 # fasd options
-eval "$(fasd --init auto)"    # slow (60 ms)
+eval "$(fasd --init auto)"
 alias j='fasd_cd -d'     # cd, same functionality as j in autojump
 alias jj='fasd_cd -d -i' # cd with interactive selection
 
@@ -143,18 +134,12 @@ alias -s py=$EDITOR
 alias -s pdf=open
 
 # other
-alias clc=clear # more cmd style alias
 alias ccat='pygmentize -g'
 
 # ssh aliases
 alias lenna='ssh lenna.stanford.edu'
 alias lennax='ssh -CY lenna.stanford.edu'
-alias msh='mosh -6 lenna.stanford.edu'
 alias cardinal='ssh -CY cardinal.stanford.edu'
-alias tonto='ssh -CY niru@tonto.stanford.edu'
-
-# julia
-alias julia='/Applications/Julia-0.5.app/Contents/Resources/julia/bin/julia'
 
 # matlab
 alias matlab='/usr/bin/matlab -nodesktop -nosplash'
@@ -165,17 +150,12 @@ alias ipy='ipython3 --nosep --no-banner --profile=mbp'
 alias iyp='ipython3 --nosep --no-banner --profile=mbp'
 alias nb='jupyter notebook'
 alias pag='pip list | ag'
-alias vizdom='python -m visdom.server'
-alias visdom='python -m visdom.server'
 
 # clean up conda and update all packages
 alias cup='conda update --all; conda clean -pity'
 
 # brew
 alias bup='brew update; brew upgrade; brew cleanup'
-
-# go
-export GOPATH=$HOME/code/go
 
 # system specific aliases and paths
 alias duf='du -shc * | sort -h'
@@ -209,4 +189,4 @@ export PATH="/home/nirum/miniconda3/bin:$PATH"
 # --------------
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh    # 5 ms
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
