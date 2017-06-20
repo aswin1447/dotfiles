@@ -157,11 +157,7 @@ alias tonto='ssh -CY niru@tonto.stanford.edu'
 alias julia='/Applications/Julia-0.5.app/Contents/Resources/julia/bin/julia'
 
 # matlab
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    alias matlab='/usr/bin/matlab -nodesktop -nosplash'
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    alias matlab='/Applications/Matlab.app/bin/matlab -nodesktop -nosplash'
-fi
+alias matlab='/usr/bin/matlab -nodesktop -nosplash'
 
 # ipython
 alias pig='python3 -W ignore'
@@ -182,79 +178,30 @@ alias bup='brew update; brew upgrade; brew cleanup'
 export GOPATH=$HOME/code/go
 
 # system specific aliases and paths
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+alias duf='du -shc * | sort -h'
+alias pi='sudo -H pip3.5 install -U'
+alias restart='sudo shutdown -r now'
+alias print='lpr'
 
-    alias duf='du -shc * | sort -h'
-    alias pi='sudo -H pip3.5 install -U'
-    alias restart='sudo shutdown -r now'
-    alias print='lpr'
+# temperature
+alias cputemp="sensors | sed -rn 's/^.* \\+([0-9]+)\\.[0-9].C .*/\\1/p'"
+alias gputemp="nvidia-smi -q -d temperature | sed -rn 's/^.*GPU Current.*: ([0-9]+).*/\\1/p'"
 
-    # temperature
-    alias cputemp="sensors | sed -rn 's/^.* \\+([0-9]+)\\.[0-9].C .*/\\1/p'"
-    alias gputemp="nvidia-smi -q -d temperature | sed -rn 's/^.*GPU Current.*: ([0-9]+).*/\\1/p'"
+# mount SNI server
+alias mount_db="sshfs nirum@sni-vcs-baccus.stanford.edu:/share/baccus ~/sni"
 
-    # mount SNI server
-    alias mount_db="sshfs nirum@sni-vcs-baccus.stanford.edu:/share/baccus ~/sni"
+# set up LD_LIBRARY_PATH (cuda and Intel MKL libraries)
+export LD_LIBRARY_PATH="/usr/local/cuda:/usr/local/cuda/lib64"
 
-    # set up LD_LIBRARY_PATH (cuda and Intel MKL libraries)
-    export LD_LIBRARY_PATH="/usr/local/cuda:/usr/local/cuda/lib64"
+# set up path
+export PATH="/usr/local/cuda/bin:$PATH"
+# export PATH="/opt/intel/bin:$PATH"
 
-    # set up path
-    export PATH="/usr/local/cuda/bin:$PATH"
-    # export PATH="/opt/intel/bin:$PATH"
+# npm
+export PATH="/home/nirum/.npm-global/bin:$PATH"
 
-    # npm
-    export PATH="/home/nirum/.npm-global/bin:$PATH"
-
-    # anaconda / miniconda for python
-    export PATH="/home/nirum/miniconda3/bin:$PATH"
-
-
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-
-    export HOMEBREW_EDITOR="nvim"
-    export VISUAL="nvim"
-    alias duf='du -shc * | gsort -h'
-    alias spot='spotify'
-
-    # dash
-    function dash() {
-        open "dash://$*"
-    }
-
-    # mount the SNI data storage (thanks to mwaskom@stanford.edu)
-    function mount_sni() {
-        mnt=/Users/nirum/sni
-        if [ ! -d $mnt ] || [ `ls -l $mnt | wc -l` -eq 0 ]; then
-            mkdir -p $mnt
-            kinit nirum@stanford.edu
-            mount_smbfs //nirum@sni-storage.stanford.edu/group/baccus $mnt
-        fi
-        export SNI=$mnt/Niru
-    }
-
-    # texlive
-    export PATH="/usr/local/texlive/2016/bin/x86_64-darwin:$PATH"
-
-    # cabal
-    export PATH="/Users/nirum/.cabal/bin:$PATH"
-
-    # gopath
-    export PATH="/Users/nirum/code/go/bin:$PATH"
-
-    # go
-    export PATH="/usr/local/opt/go/libexc/bin:$PATH"
-
-    # anaconda
-    export PATH="/Users/nirum/miniconda3/bin:$PATH"
-
-    # CUDA
-    export CUDA_HOME="/usr/local/cuda"
-    export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib"
-    export LD_LIBRARY_PATH="/usr/local/cuda/lib"
-    export PATH="/usr/local/cuda/bin:/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib:$PATH"
-
-fi
+# anaconda / miniconda for python
+export PATH="/home/nirum/miniconda3/bin:$PATH"
 
 
 # --------------
