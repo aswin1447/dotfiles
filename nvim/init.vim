@@ -225,7 +225,7 @@ function! GitInfo()
   if git != ''
     return ' '.git.' '
   else
-    return ''
+    return '      '
 endfunction
 
 " statusline symbols
