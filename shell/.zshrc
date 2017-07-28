@@ -91,7 +91,8 @@ alias lf='ls -lSFh'
 alias la='ls -a'
 alias s='ls'
 alias sl='ls'
-alias les='pygmentize'
+alias pyg='pygmentize'
+alias def='ag def -A 8 -B 2 -s --stats'
 
 # tmux stuff
 alias tls='tmux ls'
@@ -140,6 +141,7 @@ alias ccat='pygmentize -g'
 # ssh aliases
 alias lenna='ssh lenna.stanford.edu'
 alias lennax='ssh -CY lenna.stanford.edu'
+alias lane='ssh -CY niru@lmcintosh.stanford.edu'
 alias cardinal='ssh -CY cardinal.stanford.edu'
 
 # matlab
@@ -184,10 +186,8 @@ export PATH="/home/nirum/.npm-global/bin:$PATH"
 # anaconda / miniconda for python
 export PATH="/home/nirum/miniconda3/bin:$PATH"
 
-
 # --------------
 # -- Finalize --
 # --------------
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
