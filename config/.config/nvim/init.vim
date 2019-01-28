@@ -12,7 +12,7 @@
 call plug#begin('~/.vim/plugged')
 
 " FZF fuzzy file finder
-"Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 "lug 'junegunn/fzf.vim'
 
 " adds git commands (Gstatus, Gcommit, Gdiff)
@@ -28,10 +28,21 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'zxqfl/tabnine-vim'
 
 " autocompletion
-" Plug 'roxma/nvim-completion-manager'
 "Plug 'ncm2/ncm2'
 "Plug 'roxma/nvim-yarp'
 "Plug 'ncm2/ncm2-jedi'
+
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+"Plug 'ncm2/ncm2-bufword'
+"Plug 'ncm2/ncm2-path'
+
+" language client
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ }
+
+"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " auto format
 "Plug 'Chiel92/vim-autoformat'
@@ -161,6 +172,12 @@ set clipboard+=unnamed
 
 " Plugin settings ----------------------- {{{
 
+" enable ncm2 for all buffers
+"autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" :help Ncm2PopupOpen for more information
+"set completeopt=noinsert,menuone,noselect
+
 " " FZF
 " fun! s:fzf_root()
 "   let path = finddir(".git", expand("%:p:h").";")
@@ -174,7 +191,10 @@ set clipboard+=unnamed
 " nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 " nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-"
+"let g:LanguageClient_serverCommands = {
+"  \ 'typescript': ['javascript-typescript-stdio'],
+"  \ }
+
 " " git and github
 " let g:gitgutter_enabled = 1
 " let g:gitgutter_sign_modified =  '±'
