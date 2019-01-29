@@ -166,7 +166,7 @@ alias -s py=$EDITOR
 alias -s pdf=open
 
 # ssh aliases
-alias ruse='ssh nirum@198.74.50.117'
+alias ruse='ssh nirum@nirumaheswaranathan.com'
 
 # ipython
 alias ipy='ipython3 --nosep --no-banner --profile=mbp'
